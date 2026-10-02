@@ -599,17 +599,256 @@ h1 span {
         align-items:flex-start;
     }
 }
+
+    /* Mobile navigation */
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      font-size: 25px;
+      cursor: pointer;
+      padding: 4px 6px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* CP & TP */
+    .cptp {
+      background: linear-gradient(135deg, #f7fbfd 0%, #dff2fb 55%, #b9e4f8 100%);
+    }
+
+    .cptp-wrap {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .cptp-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 25px 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .cptp-tab {
+      border: 2px solid var(--blue);
+      background: #fff;
+      color: var(--navy);
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .cptp-tab:hover,
+    .cptp-tab.active {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .cptp-content {
+      background: rgba(255,255,255,.92);
+      border-radius: 24px;
+      padding: 32px;
+      min-height: 260px;
+      box-shadow: var(--shadow);
+    }
+
+    .cptp-panel {
+      display: none;
+    }
+
+    .cptp-panel.active {
+      display: block;
+    }
+
+    .cptp-panel h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 24px;
+    }
+
+    .cptp-panel p,
+    .cptp-panel ol {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .cptp-panel ol {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    /* Video cards: video is visible immediately */
+    .video-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #092f48;
+      overflow: hidden;
+    }
+
+    .video-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .video-info {
+      padding: 22px 25px 25px;
+    }
+
+    .video-info .icon {
+      font-size: 30px;
+    }
+
+    .video-info h3 {
+      margin: 9px 0 8px;
+      color: var(--navy);
+    }
+
+    .video-info p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .video-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        padding: 10px 18px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        padding-top: 5px;
+      }
+
+      .links.open {
+        display: flex;
+      }
+
+      .links a {
+        font-size: 13px;
+        padding: 10px 2px;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+
+      .grid,
+      .template-box,
+      .submit-grid,
+      .support-grid,
+      .result-grid,
+      .cards,
+      .material-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 60px 0 50px;
+      }
+
+      .hero-card {
+        height: auto;
+        aspect-ratio: 16 / 10;
+      }
+
+      h1 {
+        font-size: clamp(32px, 8vw, 42px);
+      }
+
+      .container {
+        padding: 0 18px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .pdf-viewer {
+        height: 620px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .logo {
+        font-size: 18px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+
+      .cptp-tab {
+        flex: 1;
+        padding: 11px 8px;
+        font-size: 12px;
+      }
+
+      .cptp-content {
+        padding: 20px;
+        min-height: 290px;
+        border-radius: 18px;
+      }
+
+      .cptp-panel h3 {
+        font-size: 21px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+      }
+
+      .pdf-viewer {
+        height: 520px;
+      }
+
+      .pdf-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
   </style>
  </head>
  <body>
   <nav class="nav">
-   <div class="logo">
-    DIGITAL
-    <span>
-     KJJ
-    </span>
+   <div class="nav-left">
+    <button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+     DIGITAL <span>KJJ</span>
+    </div>
    </div>
-   <div class="links">
+   <div class="links" id="mainLinks">
     <a href="#beranda">
      Beranda
     </a>
@@ -673,6 +912,44 @@ h1 span {
     </div>
    </div>
   </header>
+
+  <section class="cptp" id="cptp">
+   <div class="container cptp-wrap">
+    <h2 class="title">CP &amp; TP</h2>
+    <div class="line"></div>
+
+    <div class="cptp-tabs">
+     <button class="cptp-tab active" type="button" aria-selected="true" onclick="showCptp('cp', this)">
+      Capaian Pembelajaran
+     </button>
+     <button class="cptp-tab" type="button" aria-selected="false" onclick="showCptp('tp', this)">
+      Tujuan Pembelajaran
+     </button>
+    </div>
+
+    <div class="cptp-content">
+     <div class="cptp-panel active" id="panel-cp">
+      <h3>Capaian Pembelajaran</h3>
+      <p>
+       Peserta didik mampu memahami dan melaksanakan pengukuran survei jalan dan jembatan,
+       mengolah data hasil pengukuran menggunakan perangkat lunak, serta menyajikan hasil
+       pengolahan dalam bentuk peta topografi digital.
+      </p>
+     </div>
+
+     <div class="cptp-panel" id="panel-tp">
+      <h3>Tujuan Pembelajaran</h3>
+      <ol>
+       <li>Menjelaskan prinsip dasar pengukuran poligon tertutup menggunakan Total Station.</li>
+       <li>Melaksanakan pengukuran sesuai prosedur dan mencatat data lapangan dengan benar.</li>
+       <li>Mengolah data hasil pengukuran menggunakan ArcGIS.</li>
+       <li>Menyajikan hasil pengolahan dalam bentuk peta topografi digital.</li>
+      </ol>
+     </div>
+    </div>
+   </div>
+  </section>
+
   <section class="media" id="media">
    <div class="container">
     <h2 class="title">
@@ -684,50 +961,66 @@ h1 span {
      Gunakan media berikut secara berurutan untuk mengikuti proses praktik dari pengukuran lapangan hingga pengolahan data dan penyajian peta.
     </p>
     <div class="cards">
-     <div class="card">
-      <div class="icon">
-       🎯
-      </div>
-      <h3>
-       Pengukuran Total Station
-      </h3>
-      <p>
-       Video panduan praktik pengukuran poligon tertutup menggunakan Total Station, termasuk STN, BS, FS, dan perpindahan alat.
-      </p>
-      <a class="btn" href="#" onclick="return false">
-       LIHAT VIDEO &rarr;
-      </a>
+    <div class="card video-card">
+     <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/VIDEO_TOTAL_STATION"
+       title="Video Pengukuran Total Station"
+       loading="lazy"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+       allowfullscreen></iframe>
      </div>
-     <div class="card">
-      <div class="icon">
-       💻
-      </div>
-      <h3>
-       Pengolahan Data ArcGIS
-      </h3>
+     <div class="video-info">
+      <div class="icon">🎯</div>
+      <h3>Pengukuran Total Station</h3>
       <p>
-       Video panduan menyiapkan data, memasukkan titik, mengolah elevasi, membuat kontur, label, dan layout.
+       Video panduan praktik pengukuran poligon tertutup menggunakan Total Station,
+       termasuk STN, BS, FS, dan perpindahan alat.
       </p>
-      <a class="btn" href="#" onclick="return false">
-       LIHAT VIDEO &rarr;
-      </a>
      </div>
-     <div class="card">
-      <div class="icon">
-       🗺️
-      </div>
-      <h3>
-       Pembuatan Peta Topografi
-      </h3>
+    </div>
+
+    <div class="card video-card">
+     <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ARCGIS"
+       title="Video Pengolahan Data ArcGIS"
+       loading="lazy"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+       allowfullscreen></iframe>
+     </div>
+     <div class="video-info">
+      <div class="icon">💻</div>
+      <h3>Pengolahan Data ArcGIS</h3>
       <p>
-       Video lanjutan untuk menyusun hasil pengolahan menjadi peta topografi digital yang siap disajikan.
+       Video panduan menyiapkan data, memasukkan titik, mengolah elevasi, membuat kontur,
+       label, dan layout.
       </p>
-      <a class="btn" href="#" onclick="return false">
-       LIHAT VIDEO &rarr;
-      </a>
+     </div>
+    </div>
+
+    <div class="card video-card">
+     <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/VIDEO_PETA_TOPOGRAFI"
+       title="Video Pembuatan Peta Topografi"
+       loading="lazy"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+       allowfullscreen></iframe>
+     </div>
+     <div class="video-info">
+      <div class="icon">🗺️</div>
+      <h3>Pembuatan Peta Topografi</h3>
+      <p>
+       Video lanjutan untuk menyusun hasil pengolahan menjadi peta topografi digital
+       yang siap disajikan.
+      </p>
      </div>
     </div>
    </div>
+
+   <p class="video-note">
+    Video sudah dibuat tampil langsung di halaman. Nanti cukup ganti ID YouTube pada bagian
+    <strong>VIDEO_TOTAL_STATION</strong>, <strong>VIDEO_ARCGIS</strong>, dan
+    <strong>VIDEO_PETA_TOPOGRAFI</strong> dengan ID video asli.
+   </p>
   </section>
   <section class="materials" id="materi">
    <div class="container">
