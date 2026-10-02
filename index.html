@@ -55,8 +55,8 @@ a {
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
-    padding:13px 30px;
+    gap:16px;
+    padding:12px 22px;
     box-shadow:0 4px 18px rgba(0,0,0,.12);
 }
 
@@ -73,15 +73,15 @@ a {
 
 .links {
     display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+    gap:16px;
+    flex-wrap:nowrap;
     justify-content:flex-end;
 }
 
 .links a {
-    font-size:13px;
+    font-size:12px;
     font-weight:800;
-    padding:8px 0;
+    padding:7px 0;
     color:#fff;
     border-bottom:3px solid transparent;
 }
@@ -600,6 +600,170 @@ h1 span {
     }
 }
 
+
+    /* =========================
+       ALUR PEMBELAJARAN
+       ========================= */
+    .flow {
+      background:
+        radial-gradient(circle at 8% 15%, rgba(247, 197, 43, .28), transparent 24%),
+        radial-gradient(circle at 92% 20%, rgba(23, 111, 168, .22), transparent 25%),
+        radial-gradient(circle at 55% 95%, rgba(85, 183, 232, .26), transparent 28%),
+        linear-gradient(135deg, #f4fbff 0%, #d8effa 42%, #b7dff2 72%, #eef9fd 100%);
+    }
+
+    .flow-intro {
+      max-width: 900px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .flow-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      padding: 24px 20px;
+      box-shadow: 0 12px 32px rgba(11, 59, 92, .12);
+      border: 1px solid rgba(255, 255, 255, .85);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .flow-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      right: -55px;
+      bottom: -60px;
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    /* Variasi warna tetap dalam tema biru-kuning */
+    .flow-card:nth-child(1),
+    .flow-card:nth-child(5) {
+      background: linear-gradient(145deg, #ffffff 0%, #e4f4fc 100%);
+    }
+
+    .flow-card:nth-child(1)::after,
+    .flow-card:nth-child(5)::after {
+      background: #55b7e8;
+    }
+
+    .flow-card:nth-child(2),
+    .flow-card:nth-child(6) {
+      background: linear-gradient(145deg, #fffef5 0%, #fff0a8 100%);
+    }
+
+    .flow-card:nth-child(2)::after,
+    .flow-card:nth-child(6)::after {
+      background: #f7c52b;
+    }
+
+    .flow-card:nth-child(3),
+    .flow-card:nth-child(7) {
+      background: linear-gradient(145deg, #ffffff 0%, #d4f0fb 100%);
+    }
+
+    .flow-card:nth-child(3)::after,
+    .flow-card:nth-child(7)::after {
+      background: #176fa8;
+    }
+
+    .flow-card:nth-child(4),
+    .flow-card:nth-child(8) {
+      background: linear-gradient(145deg, #fffdf0 0%, #ffe58a 100%);
+    }
+
+    .flow-card:nth-child(4)::after,
+    .flow-card:nth-child(8)::after {
+      background: #55b7e8;
+    }
+
+    .flow-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 38px rgba(11, 59, 92, .18);
+    }
+
+    .flow-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .flow-card h3,
+    .flow-card p,
+    .flow-card .mini-btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    .flow-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 18px;
+    }
+
+    .flow-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .flow-card .mini-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 9px 13px;
+      border-radius: 18px;
+      background: var(--yellow);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 5px 12px rgba(11, 59, 92, .10);
+    }
+
+    .flow-final {
+      margin-top: 24px;
+      padding: 24px 28px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .flow-final h3 {
+      margin: 0 0 8px;
+      color: var(--yellow2);
+    }
+
+    .flow-final p {
+      margin: 0;
+      color: #e8f7ff;
+      line-height: 1.65;
+    }
+
+    .support-grid.three {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     /* Mobile navigation */
     .menu-toggle {
       display: none;
@@ -766,7 +930,9 @@ h1 span {
       .support-grid,
       .result-grid,
       .cards,
-      .material-grid {
+      .material-grid,
+      .flow-grid,
+      .support-grid.three {
         grid-template-columns: 1fr;
       }
 
@@ -853,22 +1019,25 @@ h1 span {
      Beranda
     </a>
     <a href="#media">
-     Media Pembelajaran
+     Media Belajar
+    </a>
+    <a href="#alur">
+     Alur
     </a>
     <a href="#materi">
-     Materi
+     Materi Pembelajaran
     </a>
     <a href="#template">
-     Template Jobsheet
+     Tamplate Jobsheet
     </a>
     <a href="#pengumpulan">
-     Pengumpulan Tugas
+     Tugas
     </a>
     <a href="#pendukung">
      Bahan Pendukung
     </a>
     <a href="#hasil">
-     Hasil Praktik
+     Hasil
     </a>
     <a href="#evaluasi">
      Evaluasi
@@ -879,7 +1048,7 @@ h1 span {
    <div class="container grid">
     <div>
      <div class="kicker">
-      KONSTRUKSI JALAN DAN JEMBATAN &middot; KELAS XI FASE F
+      KONSTRUKSI JALAN DAN JEMBATAN &middot; KELAS XI &middot; KGS &middot; FASE F
      </div>
      <br>
      <h1>
@@ -931,22 +1100,126 @@ h1 span {
      <div class="cptp-panel active" id="panel-cp">
       <h3>Capaian Pembelajaran</h3>
       <p>
-       Peserta didik mampu memahami dan melaksanakan pengukuran survei jalan dan jembatan,
-       mengolah data hasil pengukuran menggunakan perangkat lunak, serta menyajikan hasil
-       pengolahan dalam bentuk peta topografi digital.
+       Pada akhir fase F, peserta didik mampu memantapkan passion dan vision untuk merencanakan dan melaksanakan pengukuran dan survei topografi jalan dan jembatan, menggambar konstruksi jalan dan jembatan, menghitung biaya pekerjaan, merencanakan dan melaksanakan pekerjaan konstruksi jalan dan jembatan, serta membuat presentasi desain konstruksi jalan dan jembatan sederhana. 
       </p>
      </div>
 
      <div class="cptp-panel" id="panel-tp">
       <h3>Tujuan Pembelajaran</h3>
+      <h5>Setelah mengikuti pembelajaran, siswa diharapkan mampu:</h5>
       <ol>
-       <li>Menjelaskan konsep dasar pengukuran poligon tertutup menggunakan Total Station.</li>
-       <li>Mengidentifikasi fungsi alat, titik STN, backsight (BS), dan foresight (FS) dalam pengukuran.</li>
-       <li>Melaksanakan pengukuran dan mencatat data hasil pengukuran sesuai prosedur.</li>
-       <li>Mengolah data hasil pengukuran menggunakan ArcGIS hingga menghasilkan informasi titik dan elevasi.</li>
-       <li>Menyajikan hasil pengolahan dalam bentuk peta topografi digital sederhana.</li>
+       <li>Menyusun jobsheet pengukuran poligon tertutup.</li>
+       <li>Melaksanakan pengukuran poligon tertutup menggunakan Total Station.</li>
+       <li>Mengolah dan menganalisis data hasil pengukuran melalui ArcGIS.</li>
+       <li>Memeriksa dan mengevaluasi ketelitian hasil pengukuran.</li>
+       <li>Menghasilkan peta topografi digital dari hasil pengukuran.</li>
+       <li>Menyusun laporan hasil proyek pengukuran poligon tertutup.</li>
       </ol>
      </div>
+    </div>
+   </div>
+  </section>
+
+
+  <section class="flow" id="alur">
+   <div class="container">
+    <h2 class="title">
+     Alur Pembelajaran
+    </h2>
+    <div class="line"></div>
+    <p class="flow-intro">
+     Ikuti tahapan pembelajaran secara berurutan, mulai dari persiapan,
+     praktik pengukuran, observasi, pemeriksaan hasil, hingga pengolahan
+     data dan penyajian peta topografi digital.
+    </p>
+
+    <div class="flow-grid">
+     <div class="flow-card">
+      <span class="flow-number">01</span>
+      <h3>Pengenalan &amp; Demonstrasi</h3>
+      <p>
+       Memahami konsep pengukuran poligon tertutup dan mengamati demonstrasi
+       penggunaan Total Station.
+      </p>
+     </div>
+
+     <div class="flow-card">
+      <span class="flow-number">02</span>
+      <h3>Persiapan Proyek</h3>
+      <p>
+       Menentukan area pengukuran, membuat sketsa kerja, menyusun jobsheet,
+       dan membagi peran dalam kelompok.
+      </p>
+     </div>
+
+     <div class="flow-card">
+      <span class="flow-number">03</span>
+      <h3>Praktik &amp; Observasi</h3>
+      <p>
+       Kelompok melakukan pengukuran, sementara kelompok lain mengamati
+       tahapan praktik dan mencatat hasil pengamatan.
+      </p>
+      <a
+       class="mini-btn"
+       href="Lembar%20Observasi%20Siswa.pdf"
+       target="_blank"
+      >
+       ↓ LEMBAR OBSERVASI
+      </a>
+     </div>
+
+     <div class="flow-card">
+      <span class="flow-number">04</span>
+      <h3>Instalasi ArcGIS</h3>
+      <p>
+       Menyiapkan dan menginstal ArcGIS sebagai perangkat lunak yang akan
+       digunakan untuk mengolah data hasil pengukuran.
+      </p>
+     </div>
+
+     <div class="flow-card">
+      <span class="flow-number">05</span>
+      <h3>Pemeriksaan Hasil</h3>
+      <p>
+       Memasukkan dan memvisualisasikan data untuk memeriksa kesesuaian
+       hasil pengukuran dengan sketsa dan kondisi lapangan.
+      </p>
+     </div>
+
+     <div class="flow-card">
+      <span class="flow-number">06</span>
+      <h3>Perbaikan &amp; Pengukuran Ulang</h3>
+      <p>
+       Jika ditemukan kesalahan, kelompok memperbaiki prosedur dan melakukan
+       pengukuran ulang sesuai kebutuhan.
+      </p>
+     </div>
+
+     <div class="flow-card">
+      <span class="flow-number">07</span>
+      <h3>Instalasi ArcGIS</h3>
+      <p>
+       Mengolah data hasil pengukuran, termasuk titik, koordinat, elevasi,
+       kontur, label, dan layout peta.
+      </p>
+     </div>
+
+     <div class="flow-card">
+      <span class="flow-number">08</span>
+      <h3>Peta Topografi Digital</h3>
+      <p>
+       Menyajikan hasil pengolahan menjadi peta topografi digital sebagai
+       produk akhir proyek.
+      </p>
+     </div>
+    </div>
+
+    <div class="flow-final">
+     <h3>Produk Akhir</h3>
+     <p>
+      Jobsheet/laporan hasil praktik dan peta topografi digital hasil
+      pengukuran serta pengolahan data.
+     </p>
     </div>
    </div>
   </section>
@@ -959,7 +1232,7 @@ h1 span {
     <div class="line">
     </div>
     <p class="intro">
-     Gunakan media berikut secara berurutan untuk mengikuti proses praktik dari pengukuran lapangan hingga pengolahan data dan penyajian peta.
+     Gunakan media berikut secara berurutan untuk mengikuti proses praktik dari pengukuran lapangan, persiapan ArcGIS, hingga penyusunan peta topografi digital.
     </p>
     <div class="cards">
     <div class="card video-card">
@@ -983,17 +1256,17 @@ h1 span {
     <div class="card video-card">
      <div class="video-frame">
       <iframe src="https://www.youtube.com/embed/VIDEO_ARCGIS"
-       title="Video Pengolahan Data ArcGIS"
+       title="Video Instalasi ArcGIS"
        loading="lazy"
        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
        allowfullscreen></iframe>
      </div>
      <div class="video-info">
       <div class="icon">💻</div>
-      <h3>Pengolahan Data ArcGIS</h3>
+      <h3>Instalasi Aplikasi ArcGIS</h3>
       <p>
-       Video panduan menyiapkan data, memasukkan titik, mengolah elevasi, membuat kontur,
-       label, dan layout.
+       Video panduan instalasi dan persiapan ArcGIS sebelum digunakan
+       untuk mengolah data hasil pengukuran Total Station.
       </p>
      </div>
     </div>
@@ -1016,13 +1289,7 @@ h1 span {
      </div>
     </div>
    </div>
-
-   <p class="video-note">
-    Video sudah dibuat tampil langsung di halaman. Nanti cukup ganti ID YouTube pada bagian
-    <strong>VIDEO_TOTAL_STATION</strong>, <strong>VIDEO_ARCGIS</strong>, dan
-    <strong>VIDEO_PETA_TOPOGRAFI</strong> dengan ID video asli.
-   </p>
-  </section>
+</section>
   <section class="materials" id="materi">
    <div class="container">
     <h2 class="title">
@@ -1089,28 +1356,6 @@ h1 span {
     <div class="pdf-card">
      <div class="pdf-head">
       <h3>
-       Jobsheet Pengukuran Poligon Tertutup
-      </h3>
-      <p>
-       Panduan atau langkah-langkah sebagai acuan sebelum praktik.
-      </p>
-     </div>
-     <div class="pdf-viewer">
-      <iframe src="template_jobsheet.pdf" title="Jobsheet Pengukuran Poligon Tertutup">
-      </iframe>
-     </div>
-     <div class="pdf-actions">
-      <p>
-       PDF dapat dibaca langsung dan dibuka pada tab baru.
-      </p>
-      <a class="btn blue" href="template_jobsheet.pdf" target="_blank">
-       BUKA PENUH &rarr;
-      </a>
-     </div>
-    </div>
-    <div class="pdf-card">
-     <div class="pdf-head">
-      <h3>
        Materi Dasar Pengukuran dan Survei
       </h3>
       <p>
@@ -1126,6 +1371,28 @@ h1 span {
        PDF dapat dibaca langsung dan dibuka pada tab baru.
       </p>
       <a class="btn blue" href="materi_dasar.pdf" target="_blank">
+       BUKA PENUH &rarr;
+      </a>
+     </div>
+    </div>
+    <div class="pdf-card">
+     <div class="pdf-head">
+      <h3>
+       Jobsheet Pengukuran Poligon Tertutup
+      </h3>
+      <p>
+       Panduan atau langkah-langkah sebagai acuan sebelum praktik.
+      </p>
+     </div>
+     <div class="pdf-viewer">
+      <iframe src="template_jobsheet.pdf" title="Jobsheet Pengukuran Poligon Tertutup">
+      </iframe>
+     </div>
+     <div class="pdf-actions">
+      <p>
+       PDF dapat dibaca langsung dan dibuka pada tab baru.
+      </p>
+      <a class="btn blue" href="template_jobsheet.pdf" target="_blank">
        BUKA PENUH &rarr;
       </a>
      </div>
@@ -1198,8 +1465,7 @@ h1 span {
     <div class="line">
     </div>
     <p class="intro" style="color:#e8f7ff">
-     Setelah pekerjaan selesai, kumpulkan file melalui tautan yang disediakan. Pengumpulan dibuat terpisah agar file tugas tidak tercampur dengan folder hasil praktik yang akan ditampilkan kepada publik.
-    </p>
+     Setelah pekerjaan selesai, kumpulkan file melalui tautan yang disediakan.
     <div class="submit-grid">
      <div class="submit-card">
       <h3>
@@ -1233,24 +1499,48 @@ h1 span {
     </h2>
     <div class="line">
     </div>
-    <div class="support-grid">
+    <p class="intro">
+     Silahkan nduh file yang diperlukan selama praktik, seperti lembar observasi, akses ArcGIS, dan referensi pendukung.
+    </p>
+
+    <div class="support-grid three">
+     <div class="support-card">
+      <h3>
+       👀 Lembar Observasi
+      </h3>
+      <p>
+      Lembar observasi digunakan saat kelompok lain melakukan praktik untuk mencatat tahapan,
+       hasil pengamatan, temuan, catatan umum, dan refleksi observer.
+      </p>
+      <a
+       class="btn"
+       href="Lembar%20Observasi%20Siswa.pdf"
+       target="_blank"
+      >
+       BUKA LEMBAR OBSERVASI &rarr;
+      </a>
+     </div>
+
      <div class="support-card">
       <h3>
        💻 File / Akses ArcGIS
       </h3>
       <p>
-       Tempatkan tautan Google Drive atau sumber instalasi ArcGIS yang digunakan dalam pembelajaran pada tombol berikut.
+       Akses file atau sumber instalasi ArcGIS yang digunakan dalam pembelajaran
+       sebelum proses pengolahan data.
       </p>
       <a class="btn blue" href="#" onclick="return false">
        AKSES ARCGIS &rarr;
       </a>
      </div>
+
      <div class="support-card">
       <h3>
        📚 Referensi Tambahan
       </h3>
       <p>
-       Gunakan bagian ini untuk menambahkan referensi, panduan singkat, atau dokumen pendukung lain yang diperlukan siswa.
+       Akses referensi, panduan singkat, atau dokumen pendukung lain yang
+       diperlukan selama pembelajaran.
       </p>
       <a class="btn" href="#" onclick="return false">
        BUKA REFERENSI &rarr;
@@ -1267,7 +1557,7 @@ h1 span {
     <div class="line">
     </div>
     <p class="intro">
-     Halaman ini menjadi galeri hasil pekerjaan yang sudah diperiksa dan dipilih untuk ditampilkan. Pengumpulan siswa tetap dilakukan melalui halaman Pengumpulan Tugas.
+     Galeri hasil pekerjaan yang sudah diperiksa dan dipilih untuk ditampilkan. Pengumpulan siswa tetap dilakukan melalui halaman Pengumpulan Tugas.
     </p>
     <div class="result-grid">
      <div class="result-card">
@@ -1278,7 +1568,7 @@ h1 span {
        Hasil Jobsheet
       </h3>
       <p>
-       Menampilkan jobsheet siswa/kelompok yang telah selesai dan dipilih untuk ditampilkan sebagai dokumentasi hasil praktik.
+       Hasil jobsheet siswa/kelompok yang telah selesai dan dipilih untuk ditampilkan sebagai dokumentasi hasil praktik.
       </p>
       <a class="btn blue" href="#" onclick="return false">
        LIHAT HASIL JOBSHEET &rarr;
@@ -1292,7 +1582,7 @@ h1 span {
        Hasil Peta Topografi
       </h3>
       <p>
-       Menampilkan hasil peta topografi digital siswa/kelompok sebagai produk akhir pengolahan data.
+       Hasil peta topografi digital siswa/kelompok sebagai produk akhir pengolahan data.
       </p>
       <a class="btn blue" href="#" onclick="return false">
        LIHAT HASIL PETA &rarr;
@@ -1325,7 +1615,7 @@ h1 span {
   <footer class="footer">
    Konstruksi Jalan dan Jembatan &middot; Kelas XI &middot;
    <strong>
-    Media Pembelajaran Digital
+    Konstruksi Gedung dan Sanitasi
    </strong>
   </footer>
  
