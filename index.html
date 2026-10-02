@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Media Pembelajaran Digital KJJ
+  </title>
+  <style>
+   :root {
+    --navy:#0b3b5c;
+    --blue:#176fa8;
+    --blue2:#55b7e8;
+    --yellow:#f7c52b;
+    --yellow2:#ffe98a;
+    --ink:#17364a;
+    --muted:#557084;
+    --white:#fff;
+    --soft:#edf7fc;
+    --shadow:0 12px 32px rgba(11,59,92,.13);
+}
+
+* {
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    color:var(--ink);
+    background:#eaf5fb;
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
+}
+
+.nav {
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(8,48,75,.97);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:13px 30px;
+    box-shadow:0 4px 18px rgba(0,0,0,.12);
+}
+
+.logo {
+    font-size:24px;
+    font-weight:900;
+    letter-spacing:.5px;
+    white-space:nowrap;
+}
+
+.logo span {
+    color:var(--yellow);
+}
+
+.links {
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+
+.links a {
+    font-size:13px;
+    font-weight:800;
+    padding:8px 0;
+    color:#fff;
+    border-bottom:3px solid transparent;
+}
+
+.links a:hover {
+    color:var(--yellow);
+    border-color:var(--yellow);
+}
+
+.container {
+    max-width:1180px;
+    margin:auto;
+    padding:0 28px;
+}
+
+section {
+    padding:70px 0;
+    position:relative;
+    overflow:hidden;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    max-width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #063a5a 0%,
+        #176fa8 55%,
+        #5bbce9 100%
+    );
+
+    color: #fff;
+}
+
+.hero:after {
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    right:-130px;
+    bottom:-190px;
+    background:linear-gradient(135deg,rgba(247,197,43,.9),rgba(255,233,138,.12));
+    filter:blur(1px);
+}
+
+.hero-card {
+    width: 100%;
+    height: 420px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    border: 2px solid rgba(255, 255, 255, 0.35);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.hero-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.kicker {
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:1.6px;
+    color:var(--yellow2);
+}
+
+h1 {
+    font-size:48px;
+    line-height:1.02;
+    margin:12px 0 15px;
+}
+
+h1 span {
+    color:var(--yellow);
+}
+
+.hero h2 {
+    font-size:21px;
+    line-height:1.45;
+    margin:0 0 15px;
+}
+
+.hero p {
+    max-width:720px;
+    color:#e9f7ff;
+    line-height:1.75;
+}
+
+.btn {
+    display:inline-block;
+    background:var(--yellow);
+    color:var(--navy);
+    padding:13px 20px;
+    border-radius:24px;
+    font-size:13px;
+    font-weight:900;
+    margin:8px 8px 0 0;
+    box-shadow:0 6px 16px rgba(0,0,0,.12);
+    transition:.2s;
+}
+
+.btn:hover {
+    transform:translateY(-2px);
+}
+
+.btn.secondary {
+    background:#fff;
+    color:var(--navy);
+}
+
+.btn.blue {
+    background:var(--blue);
+    color:#fff;
+}
+
+.btn.dark {
+    background:var(--navy);
+    color:#fff;
+}
+
+.visual {
+    min-height:330px;
+    border-radius:28px;
+    border:2px solid rgba(255,255,255,.4);
+    background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.06));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:35px;
+    font-weight:900;
+    font-size:24px;
+    line-height:1.35;
+    box-shadow:0 18px 45px rgba(0,0,0,.15);
+    backdrop-filter:blur(5px);
+}
+
+.title {
+    font-size:32px;
+    margin:0 0 9px;
+    color:var(--navy);
+}
+
+.line {
+    width:70px;
+    height:5px;
+    border-radius:5px;
+    background:linear-gradient(90deg,var(--yellow),var(--blue2));
+    margin-bottom:28px;
+}
+
+.intro {
+    max-width:850px;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.media {
+    background:linear-gradient(180deg,#dff4ff 0%,#b9e4f8 48%,#e6f8ff 100%);
+}
+
+.cards {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card {
+    background:rgba(255,255,255,.86);
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:var(--shadow);
+    backdrop-filter:blur(4px);
+}
+
+.card .icon {
+    font-size:32px;
+}
+
+.card h3 {
+    color:var(--navy);
+    margin:12px 0 8px;
+}
+
+.card p {
+    color:var(--muted);
+    line-height:1.65;
+    margin:0 0 12px;
+}
+
+.materials {
+    background:linear-gradient(135deg,#fff7c9 0%,#ffe37a 45%,#f6c62e 100%);
+}
+
+.material-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.material-card {
+    background:rgba(255,255,255,.86);
+    border-radius:20px;
+    padding:24px;
+    box-shadow:var(--shadow);
+}
+
+.material-card h3 {
+    margin:10px 0;
+    color:var(--navy);
+}
+
+.material-card p {
+    color:var(--muted);
+    line-height:1.65;
+}
+
+.badge {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:var(--navy);
+    color:#fff;
+    font-weight:900;
+}
+
+.pdf-section {
+    background:linear-gradient(180deg,#eaf7fd,#cdeafa 55%,#a8d9f0);
+}
+
+.pdf-card {
+    overflow:hidden;
+    border-radius:22px;
+    background:#fff;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(11,59,92,.08);
+    margin-bottom:25px;
+}
+
+.pdf-head {
+    padding:22px 25px;
+    background:linear-gradient(100deg,#0b3b5c,#176fa8);
+    color:#fff;
+}
+
+.pdf-head h3 {
+    margin:0 0 7px;
+}
+
+.pdf-head p {
+    margin:0;
+    color:#dff4ff;
+    line-height:1.55;
+}
+
+.pdf-viewer {
+    height:720px;
+    background:#dfeaf0;
+}
+
+.pdf-viewer iframe {
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+.pdf-actions {
+    padding:16px 22px;
+    background:#f8fbfd;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.pdf-actions p {
+    margin:0;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.template {
+    background:linear-gradient(135deg,#f6c62e,#ffe98a 45%,#fff4bb);
+}
+
+.template-box {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.action-card {
+    background:rgba(255,255,255,.9);
+    border-radius:22px;
+    padding:28px;
+    box-shadow:var(--shadow);
+}
+
+.action-card h3 {
+    color:var(--navy);
+    margin-top:0;
+}
+
+.action-card p {
+    color:var(--muted);
+    line-height:1.65;
+}
+
+.submit {
+    background:linear-gradient(135deg,#0b3b5c,#176fa8 55%,#55b7e8);
+    color:#fff;
+}
+
+.submit .title {
+    color:#fff;
+}
+
+.submit .line {
+    background:linear-gradient(90deg,var(--yellow),#fff);
+}
+
+.submit-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.submit-card {
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:22px;
+    padding:28px;
+    backdrop-filter:blur(5px);
+}
+
+.submit-card h3 {
+    margin-top:0;
+    color:var(--yellow2);
+}
+
+.submit-card p {
+    color:#e8f7ff;
+    line-height:1.65;
+}
+
+.support {
+    background:linear-gradient(180deg,#fff3a7,#ffe47b 55%,#f7c52b);
+}
+
+.support-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.support-card {
+    background:rgba(255,255,255,.88);
+    padding:27px;
+    border-radius:22px;
+    box-shadow:var(--shadow);
+}
+
+.support-card h3 {
+    color:var(--navy);
+}
+
+.support-card p {
+    color:var(--muted);
+    line-height:1.65;
+}
+
+.results {
+    background:linear-gradient(135deg,#d8f1fc 0%,#65bee8 52%,#176fa8 100%);
+}
+
+.result-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+}
+
+.result-card {
+    background:rgba(255,255,255,.88);
+    border-radius:24px;
+    padding:30px;
+    box-shadow:var(--shadow);
+}
+
+.result-card .result-icon {
+    font-size:42px;
+}
+
+.result-card h3 {
+    color:var(--navy);
+    margin:10px 0;
+}
+
+.result-card p {
+    color:var(--muted);
+    line-height:1.65;
+}
+
+.public-note {
+    margin-top:25px;
+    background:rgba(255,255,255,.6);
+    border-left:6px solid var(--yellow);
+    padding:18px 20px;
+    border-radius:12px;
+    color:var(--navy);
+    line-height:1.6;
+}
+
+.eval {
+    background:linear-gradient(135deg,#083450,#176fa8 65%,#f0b91f);
+    color:#fff;
+    text-align:center;
+}
+
+.eval .title {
+    color:#fff;
+}
+
+.eval p {
+    max-width:720px;
+    margin:auto;
+    color:#e8f7ff;
+    line-height:1.7;
+}
+
+.footer {
+    background:#06263b;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    font-size:13px;
+}
+
+.footer strong {
+    color:var(--yellow);
+}
+
+@media(max-width:900px) {
+    .nav {
+        align-items:flex-start;
+        flex-direction:column;
+    }
+    .links {
+        justify-content:flex-start;
+    }
+    .grid,.template-box,.submit-grid,.support-grid,.result-grid {
+        grid-template-columns:1fr;
+    }
+    .cards,.material-grid {
+        grid-template-columns:1fr;
+    }
+    .pdf-viewer {
+        height:620px;
+    }
+    h1 {
+        font-size:38px;
+    }
+    .container {
+        padding:0 18px;
+    }
+}
+
+@media(max-width:560px) {
+    .links {
+        gap:10px;
+    }
+    .links a {
+        font-size:12px;
+    }
+    .hero {
+        padding-top:55px;
+    }
+    .visual {
+        min-height:230px;
+    }
+    .pdf-viewer {
+        height:520px;
+    }
+    .pdf-actions {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+  </style>
+ </head>
+ <body>
+  <nav class="nav">
+   <div class="logo">
+    DIGITAL
+    <span>
+     KJJ
+    </span>
+   </div>
+   <div class="links">
+    <a href="#beranda">
+     Beranda
+    </a>
+    <a href="#media">
+     Media Pembelajaran
+    </a>
+    <a href="#materi">
+     Materi
+    </a>
+    <a href="#template">
+     Template Jobsheet
+    </a>
+    <a href="#pengumpulan">
+     Pengumpulan Tugas
+    </a>
+    <a href="#pendukung">
+     Bahan Pendukung
+    </a>
+    <a href="#hasil">
+     Hasil Praktik
+    </a>
+    <a href="#evaluasi">
+     Evaluasi
+    </a>
+   </div>
+  </nav>
+  <header class="hero" id="beranda">
+   <div class="container grid">
+    <div>
+     <div class="kicker">
+      KONSTRUKSI JALAN DAN JEMBATAN &middot; KELAS XI FASE F
+     </div>
+     <br>
+     <h1>
+      MEDIA PEMBELAJARAN
+      <span>
+       DIGITAL KJJ
+      </span>
+     </h1>
+     <br>
+     <h2>
+      Pengukuran Poligon Tertutup Menggunakan Total Station hingga Pembuatan Peta Topografi
+     </h2>
+     <p>
+      Website pembelajaran digital yang mengintegrasikan media pembelajaran, materi, template jobsheet, pengumpulan tugas, bahan pendukung, hasil praktik, dan evaluasi dalam satu alur belajar.
+     </p>
+     <br>
+     <br>
+     <a class="btn" href="#media">
+      MULAI PEMBELAJARAN &rarr;
+     </a>
+     <a class="btn secondary" href="#materi">
+      LIHAT MATERI
+     </a>
+    </div>
+    <div class="hero-card">
+    <img
+        src="gambar_home.png"
+        alt="Pengukuran Total Station hingga peta topografi"
+    >
+    </div>
+   </div>
+  </header>
+  <section class="media" id="media">
+   <div class="container">
+    <h2 class="title">
+     Media Pembelajaran
+    </h2>
+    <div class="line">
+    </div>
+    <p class="intro">
+     Gunakan media berikut secara berurutan untuk mengikuti proses praktik dari pengukuran lapangan hingga pengolahan data dan penyajian peta.
+    </p>
+    <div class="cards">
+     <div class="card">
+      <div class="icon">
+       🎯
+      </div>
+      <h3>
+       Pengukuran Total Station
+      </h3>
+      <p>
+       Video panduan praktik pengukuran poligon tertutup menggunakan Total Station, termasuk STN, BS, FS, dan perpindahan alat.
+      </p>
+      <a class="btn" href="#" onclick="return false">
+       LIHAT VIDEO &rarr;
+      </a>
+     </div>
+     <div class="card">
+      <div class="icon">
+       💻
+      </div>
+      <h3>
+       Pengolahan Data ArcGIS
+      </h3>
+      <p>
+       Video panduan menyiapkan data, memasukkan titik, mengolah elevasi, membuat kontur, label, dan layout.
+      </p>
+      <a class="btn" href="#" onclick="return false">
+       LIHAT VIDEO &rarr;
+      </a>
+     </div>
+     <div class="card">
+      <div class="icon">
+       🗺️
+      </div>
+      <h3>
+       Pembuatan Peta Topografi
+      </h3>
+      <p>
+       Video lanjutan untuk menyusun hasil pengolahan menjadi peta topografi digital yang siap disajikan.
+      </p>
+      <a class="btn" href="#" onclick="return false">
+       LIHAT VIDEO &rarr;
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="materials" id="materi">
+   <div class="container">
+    <h2 class="title">
+     Materi
+    </h2>
+    <div class="line">
+    </div>
+    <p class="intro">
+     Materi disusun untuk mendampingi praktik. Bahan ajar dasar menjelaskan survei topografi dan poligon, sedangkan materi peta topografi membantu siswa memahami produk akhir pengolahan data.
+    </p>
+    <div class="material-grid">
+     <div class="material-card">
+      <span class="badge">
+       01
+      </span>
+      <h3>
+       Materi Dasar
+      </h3>
+      <p>
+       Konsep pengukuran dan survei jalan dan jembatan, survei topografi, metode poligon, serta pengantar pengukuran poligon tertutup menggunakan Total Station.
+      </p>
+      <a class="btn" href="materi_dasar.pdf" target="_blank">
+       BUKA MATERI &rarr;
+      </a>
+     </div>
+     <div class="material-card">
+      <span class="badge">
+       02
+      </span>
+      <h3>
+       Jobsheet Praktik
+      </h3>
+      <p>
+       Panduan praktik pengukuran poligon tertutup, mulai dari pembagian tugas, alat dan bahan, langkah kerja, pencatatan data, hingga pemeriksaan hasil.
+      </p>
+      <a class="btn" href="template_jobsheet.pdf" target="_blank">
+       BUKA JOBSHEET &rarr;
+      </a>
+     </div>
+     <div class="material-card">
+      <span class="badge">
+       03
+      </span>
+      <h3>
+       Peta Topografi
+      </h3>
+      <p>
+       Pengenalan peta topografi, garis kontur, jenis penyajian, proses pembuatan, dan pemanfaatannya dalam teknik sipil dan konstruksi.
+      </p>
+      <a class="btn" href="materi_peta_topografi.pdf" target="_blank">
+       BUKA MATERI &rarr;
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="pdf-section">
+   <div class="container">
+    <h2 class="title">
+     Materi dalam Tampilan PDF
+    </h2>
+    <div class="line">
+    </div>
+    <div class="pdf-card">
+     <div class="pdf-head">
+      <h3>
+       Jobsheet Pengukuran Poligon Tertutup
+      </h3>
+      <p>
+       Panduan atau langkah-langkah sebagai acuan sebelum praktik.
+      </p>
+     </div>
+     <div class="pdf-viewer">
+      <iframe src="template_jobsheet.pdf" title="Jobsheet Pengukuran Poligon Tertutup">
+      </iframe>
+     </div>
+     <div class="pdf-actions">
+      <p>
+       PDF dapat dibaca langsung dan dibuka pada tab baru.
+      </p>
+      <a class="btn blue" href="template_jobsheet.pdf" target="_blank">
+       BUKA PENUH &rarr;
+      </a>
+     </div>
+    </div>
+    <div class="pdf-card">
+     <div class="pdf-head">
+      <h3>
+       Materi Dasar Pengukuran dan Survei
+      </h3>
+      <p>
+       Materi dasar untuk memahami konsep sebelum praktik.
+      </p>
+     </div>
+     <div class="pdf-viewer">
+      <iframe src="materi_dasar.pdf" title="Materi dasar">
+      </iframe>
+     </div>
+     <div class="pdf-actions">
+      <p>
+       PDF dapat dibaca langsung dan dibuka pada tab baru.
+      </p>
+      <a class="btn blue" href="materi_dasar.pdf" target="_blank">
+       BUKA PENUH &rarr;
+      </a>
+     </div>
+    </div>
+    <div class="pdf-card">
+     <div class="pdf-head">
+      <h3>
+       Materi Peta Topografi
+      </h3>
+      <p>
+       Materi tentang bentuk penyajian, kontur, elevasi, GIS, dan penggunaan peta topografi.
+      </p>
+     </div>
+     <div class="pdf-viewer">
+      <iframe src="materi_peta_topografi.pdf" title="Materi peta topografi">
+      </iframe>
+     </div>
+     <div class="pdf-actions">
+      <p>
+       Gunakan materi ini sebelum menyusun hasil akhir peta.
+      </p>
+      <a class="btn blue" href="materi_peta_topografi.pdf" target="_blank">
+       BUKA PENUH &rarr;
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="template" id="template">
+   <div class="container">
+    <h2 class="title">
+     Template Jobsheet
+    </h2>
+    <div class="line">
+    </div>
+    <p class="intro">
+     Template ini digunakan siswa untuk menyusun dan melengkapi pekerjaan praktik. Setelah selesai, file dikumpulkan melalui halaman pengumpulan tugas.
+    </p>
+    <div class="template-box">
+     <div class="action-card">
+      <h3>
+       📄 Template Editable
+      </h3>
+      <p>
+       Gunakan file Word ini untuk mengisi identitas kelompok, langkah kerja, data hasil pengukuran, dokumentasi, refleksi, dan bagian lain sesuai petunjuk.
+      </p>
+      <a class="btn" download="" href="template_jobsheet_editable.docx">
+       &darr; DOWNLOAD WORD
+      </a>
+     </div>
+     <div class="action-card">
+      <h3>
+       👀 Versi PDF
+      </h3>
+      <p>
+       Gunakan versi PDF sebagai acuan tampilan dan struktur lembar kerja praktik.
+      </p>
+      <a class="btn blue" href="template_jobsheet.pdf" target="_blank">
+       BUKA PDF &rarr;
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="submit" id="pengumpulan">
+   <div class="container">
+    <h2 class="title">
+     Pengumpulan Tugas
+    </h2>
+    <div class="line">
+    </div>
+    <p class="intro" style="color:#e8f7ff">
+     Setelah pekerjaan selesai, kumpulkan file melalui tautan yang disediakan. Pengumpulan dibuat terpisah agar file tugas tidak tercampur dengan folder hasil praktik yang akan ditampilkan kepada publik.
+    </p>
+    <div class="submit-grid">
+     <div class="submit-card">
+      <h3>
+       📋 Pengumpulan Jobsheet
+      </h3>
+      <p>
+       Upload jobsheet yang telah dikerjakan sesuai format dan ketentuan yang diberikan.
+      </p>
+      <a class="btn" href="#" onclick="return false">
+       KUMPULKAN JOBSHEET &rarr;
+      </a>
+     </div>
+     <div class="submit-card">
+      <h3>
+       🗺️ Pengumpulan Peta Topografi
+      </h3>
+      <p>
+       Upload hasil peta topografi digital yang telah dibuat menggunakan ArcGIS.
+      </p>
+      <a class="btn" href="#" onclick="return false">
+       KUMPULKAN PETA &rarr;
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="support" id="pendukung">
+   <div class="container">
+    <h2 class="title">
+     Bahan Pendukung
+    </h2>
+    <div class="line">
+    </div>
+    <div class="support-grid">
+     <div class="support-card">
+      <h3>
+       💻 File / Akses ArcGIS
+      </h3>
+      <p>
+       Tempatkan tautan Google Drive atau sumber instalasi ArcGIS yang digunakan dalam pembelajaran pada tombol berikut.
+      </p>
+      <a class="btn blue" href="#" onclick="return false">
+       AKSES ARCGIS &rarr;
+      </a>
+     </div>
+     <div class="support-card">
+      <h3>
+       📚 Referensi Tambahan
+      </h3>
+      <p>
+       Gunakan bagian ini untuk menambahkan referensi, panduan singkat, atau dokumen pendukung lain yang diperlukan siswa.
+      </p>
+      <a class="btn" href="#" onclick="return false">
+       BUKA REFERENSI &rarr;
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="results" id="hasil">
+   <div class="container">
+    <h2 class="title">
+     Hasil Praktik
+    </h2>
+    <div class="line">
+    </div>
+    <p class="intro">
+     Halaman ini menjadi galeri hasil pekerjaan yang sudah diperiksa dan dipilih untuk ditampilkan. Pengumpulan siswa tetap dilakukan melalui halaman Pengumpulan Tugas.
+    </p>
+    <div class="result-grid">
+     <div class="result-card">
+      <div class="result-icon">
+       📋
+      </div>
+      <h3>
+       Hasil Jobsheet
+      </h3>
+      <p>
+       Menampilkan jobsheet siswa/kelompok yang telah selesai dan dipilih untuk ditampilkan sebagai dokumentasi hasil praktik.
+      </p>
+      <a class="btn blue" href="#" onclick="return false">
+       LIHAT HASIL JOBSHEET &rarr;
+      </a>
+     </div>
+     <div class="result-card">
+      <div class="result-icon">
+       🗺️
+      </div>
+      <h3>
+       Hasil Peta Topografi
+      </h3>
+      <p>
+       Menampilkan hasil peta topografi digital siswa/kelompok sebagai produk akhir pengolahan data.
+      </p>
+      <a class="btn blue" href="#" onclick="return false">
+       LIHAT HASIL PETA &rarr;
+      </a>
+     </div>
+    </div>
+    <div class="public-note">
+     <strong>
+      Alur publikasi:
+     </strong>
+     siswa mengumpulkan &rarr; guru memeriksa &rarr; hasil yang dipilih ditempatkan pada folder publik &rarr; website mengarah ke folder/hasil tersebut melalui Google Drive.
+    </div>
+   </div>
+  </section>
+  <section class="eval" id="evaluasi">
+   <div class="container">
+    <h2 class="title">
+     Evaluasi Pembelajaran
+    </h2>
+    <div class="line">
+    </div>
+    <p>
+     Setelah mempelajari materi dan menyelesaikan praktik, kerjakan kuis untuk mengukur pemahaman mengenai Total Station, pengolahan data ArcGIS, dan peta topografi.
+    </p>
+    <a class="btn" href="#" onclick="return false">
+     📝 MULAI KUIS &rarr;
+    </a>
+   </div>
+  </section>
+  <footer class="footer">
+   Konstruksi Jalan dan Jembatan &middot; Kelas XI &middot;
+   <strong>
+    Media Pembelajaran Digital
+   </strong>
+  </footer>
+ </body>
+</html>
